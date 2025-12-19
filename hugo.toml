@@ -1,0 +1,54 @@
+baseURL = 'https://www.cblining.com/'
+languageCode = 'en-us'
+title = "Christian Brother's Lining Co."
+
+[params]
+  description = "Cost-effective, trenchless, and eco-friendly pipe rehabilitation serving California since 2008."
+  email = "office@cblining.com"
+  tagline = "Pipeline Problems? We've Got the Solution"
+  # Cloudflare Turnstile site key for contact form spam protection
+  # Use test key for localhost: 1x00000000000000000000AA
+  turnstileSiteKey = ""
+
+[params.company]
+  name = "Christian Brother's Lining Co."
+  city = "Fairfield"
+  region = "CA"
+  country = "US"
+  serviceArea = "San Francisco Bay Area, Northern California"
+
+[params.stats]
+  linearFeet = "250,000+"
+  projects = "300+"
+  yearFounded = "2008"
+
+[params.social]
+  # facebook = "https://facebook.com/cblining"
+  # instagram = "https://instagram.com/cblining"
+
+[menu]
+  [[menu.main]]
+    name = "CIPP Pipe Lining"
+    url = "/services/cipp-pipe-lining/"
+    weight = 1
+  [[menu.main]]
+    name = "Manhole Rehabilitation"
+    url = "/services/manhole-rehabilitation/"
+    weight = 2
+  [[menu.main]]
+    name = "CCTV Inspection"
+    url = "/services/cctv-pipeline-inspection/"
+    weight = 3
+  [[menu.main]]
+    name = "Hydro Jetting"
+    url = "/services/hydro-jetting/"
+    weight = 4
+  [[menu.main]]
+    name = "Careers"
+    url = "/careers/"
+    weight = 5
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

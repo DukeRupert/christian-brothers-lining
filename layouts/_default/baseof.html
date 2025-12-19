@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ .Site.Title }} | Pipeline Rehabilitation Experts{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  {{ with .Params.image }}
+  <meta property="og:image" content="{{ . | absURL }}">
+  {{ else }}
+  <meta property="og:image" content="{{ .Site.BaseURL }}images/og-default.jpg">
+  {{ end }}
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+  <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  {{ with .Params.image }}
+  <meta name="twitter:image" content="{{ . | absURL }}">
+  {{ else }}
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}images/og-default.jpg">
+  {{ end }}
+
+  <!-- Geo tags for local SEO -->
+  <meta name="geo.region" content="US-CA">
+  <meta name="geo.placename" content="California">
+
+  <!-- Preload critical assets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+  {{ $styles := resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+
+  <!-- Analytics -->
+  <script defer data-domain="cblining.com" src="https://plausible.angmar.dev/js/script.js"></script>
+
+  <!-- Alpine.js with Collapse plugin -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Structured Data -->
+  {{ if .IsHome }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "{{ .Site.Title }}",
+    "description": "{{ .Site.Params.description }}",
+    "url": "{{ .Site.BaseURL }}",
+    "logo": "{{ .Site.BaseURL }}images/logo.png",
+    "email": "{{ .Site.Params.email }}",
+    "foundingDate": "{{ .Site.Params.stats.yearFounded }}",
+    "areaServed": {
+      "@type": "State",
+      "name": "California"
+    },
+    "serviceType": ["CIPP Pipe Lining", "Manhole Rehabilitation", "CCTV Pipeline Inspection", "Hydro Jetting"],
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Fairfield",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+  {{ else if eq .Section "services" }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "{{ .Title }}",
+    "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Params.intro }}{{ end }}",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "{{ .Site.Title }}",
+      "url": "{{ .Site.BaseURL }}",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Fairfield",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      }
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "California"
+    }
+  }
+  </script>
+  {{ else if and .File (eq .File.LogicalName "careers.md") }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Pipeline Rehabilitation Specialist",
+    "description": "Install CIPP liners, conduct CCTV inspections, operate hydro jetting equipment, and perform manhole rehabilitation for pipeline infrastructure projects.",
+    "datePosted": "2024-01-01",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "{{ .Site.Title }}",
+      "sameAs": "{{ .Site.BaseURL }}"
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Fairfield",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      }
+    },
+    "baseSalary": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": {
+        "@type": "QuantitativeValue",
+        "minValue": 27,
+        "maxValue": 35,
+        "unitText": "HOUR"
+      }
+    }
+  }
+  </script>
+  {{ else }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "{{ .Title }}",
+    "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ .Site.Title }}",
+      "url": "{{ .Site.BaseURL }}"
+    }
+  }
+  </script>
+  {{ end }}
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  {{ partial "header.html" . }}
+
+  <main id="main-content">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ partial "footer.html" . }}
+</body>
+</html>

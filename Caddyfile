@@ -1,0 +1,24 @@
+{
+    admin off
+    auto_https off
+}
+
+:{$PORT:80} {
+    root * /srv
+    file_server
+
+    try_files {path} {path}/ /index.html
+
+    header {
+        X-Content-Type-Options nosniff
+        X-Frame-Options DENY
+        Referrer-Policy strict-origin-when-cross-origin
+    }
+
+    encode gzip zstd
+
+    log {
+        output stdout
+        format console
+    }
+}

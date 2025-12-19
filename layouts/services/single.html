@@ -1,0 +1,93 @@
+{{ define "main" }}
+<!-- Service Hero -->
+<section class="service-hero">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <p class="service-intro">{{ .Params.intro }}</p>
+  </div>
+</section>
+
+<!-- Service Image -->
+{{ with .Params.image }}
+<section class="service-image">
+  <div class="container">
+    <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+  </div>
+</section>
+{{ end }}
+
+<!-- Why Choose Section -->
+{{ with .Params.benefits }}
+<section class="service-benefits">
+  <div class="container">
+    <h2>{{ $.Params.benefits_title | default "Why Choose This Service" }}</h2>
+    <div class="benefits-grid">
+      {{ range . }}
+      <div class="benefit-card">
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- Process Section -->
+{{ with .Params.process }}
+<section class="service-process">
+  <div class="container">
+    <h2>{{ $.Params.process_title | default "Our Process" }}</h2>
+    <div class="process-steps">
+      {{ range $index, $step := . }}
+      <div class="process-step">
+        <div class="step-number">{{ add $index 1 }}</div>
+        <div class="step-content">
+          <h3>{{ $step.title }}</h3>
+          <p>{{ $step.description }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- Content -->
+{{ with .Content }}
+<section class="service-content">
+  <div class="container">
+    {{ . }}
+  </div>
+</section>
+{{ end }}
+
+<!-- Related Services -->
+{{ with .Params.related }}
+<section class="related-services">
+  <div class="container">
+    <h2>Related Services</h2>
+    <div class="related-grid">
+      {{ range . }}
+      {{ with site.GetPage . }}
+      <a href="{{ .RelPermalink }}" class="related-card">
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Params.intro | truncate 100 }}</p>
+        <span class="link-arrow">Learn More</span>
+      </a>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- CTA Section -->
+<section class="cta">
+  <div class="container">
+    <h2>Ready to Renew Your Infrastructure?</h2>
+    <p>Contact us for a free assessment of your rehabilitation needs.</p>
+    <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary btn-lg">Schedule Assessment</a>
+  </div>
+</section>
+{{ end }}

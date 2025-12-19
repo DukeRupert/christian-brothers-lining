@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="page-hero">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    <p class="page-intro">Build your career in pipeline rehabilitation with a team that values excellence and innovation.</p>
+  </div>
+</section>
+
+<section class="page-content careers-content">
+  <div class="container">
+    {{ .Content }}
+
+    <div class="careers-cta">
+      <a href="mailto:{{ .Site.Params.email }}?subject=Career%20Inquiry" class="btn btn-primary btn-lg">Contact Us About Opportunities</a>
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,88 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-bg" style="background-image: url('/images/repaired-pipe.webp');"></div>
+  <div class="hero-content">
+    <div class="container">
+      <h1>{{ .Site.Params.tagline }}</h1>
+      <p class="hero-subtitle">Cost-effective, trenchless, and eco-friendly pipe rehabilitation serving California since {{ .Site.Params.stats.yearFounded }}.</p>
+      <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary btn-lg">Schedule Assessment</a>
+    </div>
+  </div>
+</section>
+
+<!-- Municipalities Section -->
+<section class="municipalities">
+  <div class="container">
+    <h2>Trusted by California Municipalities</h2>
+    <div class="municipality-list">
+      {{ range .Params.municipalities }}
+      <span class="municipality">{{ . }}</span>
+      {{ end }}
+      <span class="municipality highlight">+ Private Sector</span>
+    </div>
+  </div>
+</section>
+
+<!-- Services Overview -->
+<section class="services-overview">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      {{ range .Params.services }}
+      <div class="service-card">
+        <div class="service-icon">{{ .icon | safeHTML }}</div>
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+        {{ with .link }}<a href="{{ . }}" class="link-arrow">Learn More</a>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- CIPP Advantage -->
+<section class="advantages">
+  <div class="container">
+    <h2>The CIPP Advantage</h2>
+    <div class="advantage-grid">
+      {{ range .Params.advantages }}
+      <div class="advantage-card">
+        <div class="advantage-icon">{{ .icon | safeHTML }}</div>
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <span class="stat-number">{{ .Site.Params.stats.linearFeet }}</span>
+        <span class="stat-label">Linear Feet Restored</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">{{ .Site.Params.stats.projects }}</span>
+        <span class="stat-label">Successful Projects</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">Since {{ .Site.Params.stats.yearFounded }}</span>
+        <span class="stat-label">Years of Excellence</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+  <div class="container">
+    <h2>Ready to Restore Your Infrastructure?</h2>
+    <p>Contact us for a free assessment of your pipeline rehabilitation needs.</p>
+    <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary btn-lg">Get Started</a>
+  </div>
+</section>
+{{ end }}

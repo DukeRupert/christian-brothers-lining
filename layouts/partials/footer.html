@@ -1,0 +1,39 @@
+<footer class="footer" role="contentinfo">
+  <div class="footer-bg" style="background-image: url('/images/footer-background.webp');" aria-hidden="true"></div>
+  <div class="footer-content">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/images/logo.webp" alt="{{ .Site.Title }}" width="200" height="77">
+          <p>Licensed & Insured<br>Over 15 Years of Excellence</p>
+        </div>
+        <nav class="footer-nav" aria-label="Services">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/services/cipp-pipe-lining/">CIPP Pipe Lining</a></li>
+            <li><a href="/services/manhole-rehabilitation/">Manhole Rehabilitation</a></li>
+            <li><a href="/services/cctv-pipeline-inspection/">CCTV Inspection</a></li>
+            <li><a href="/services/hydro-jetting/">Hydro Jetting</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Company">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/careers/">Careers</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></p>
+          <p class="location">{{ .Site.Params.company.city }}, {{ .Site.Params.company.region }}</p>
+          <p class="serving">Serving {{ .Site.Params.company.serviceArea }} since {{ .Site.Params.stats.yearFounded }}</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
+        <p class="made-by">Made in Montana by <a href="https://fireflysoftware.dev/" target="_blank" rel="noopener">Firefly Software</a></p>
+      </div>
+    </div>
+  </div>
+</footer>

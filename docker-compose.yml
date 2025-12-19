@@ -1,0 +1,8 @@
+services:
+  web:
+    image: ${DOCKER_IMAGE:-dukerupert/christian-brothers-lining:latest}
+    ports:
+      - "${LISTEN_PORT:-8082}:80"
+    environment:
+      - PORT=80
+    restart: unless-stopped
