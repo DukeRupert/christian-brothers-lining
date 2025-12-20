@@ -121,12 +121,15 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
   border: none;
 }
 
-.btn-primary {
+.btn-primary,
+.btn-primary:link,
+.btn-primary:visited {
   background: var(--color-primary);
   color: var(--color-white);
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus {
   background: var(--color-primary-dark);
   color: var(--color-white);
 }
@@ -864,6 +867,26 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
   padding: var(--spacing-xl) 0;
 }
 
+.service-content h2 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.service-content p {
+  color: var(--color-gray);
+  margin-bottom: var(--spacing-md);
+}
+
+.service-content ul,
+.service-content ol {
+  margin-left: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.service-content li {
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-gray);
+}
+
 .related-services {
   padding: var(--spacing-xl) 0;
   background: var(--color-light);
@@ -1022,14 +1045,14 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
   font-weight: 600;
 }
 
-.page-content a {
+.page-content a:not(.btn) {
   color: var(--color-primary);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
 
-.page-content a:hover {
+.page-content a:not(.btn):hover {
   color: var(--color-primary-dark);
 }
 
