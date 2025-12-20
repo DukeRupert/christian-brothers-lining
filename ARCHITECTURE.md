@@ -109,15 +109,17 @@ ENTRYPOINT ["/docker-entrypoint.sh"]
 }
 
 :{$PORT:80} {
-    root * /srv
-    file_server
-
-    # Proxy API requests to Go backend
+    # Proxy API requests to Go backend (must come first)
     handle /api/* {
         reverse_proxy localhost:8080
     }
 
-    try_files {path} {path}/ /index.html
+    # Serve static files for everything else
+    handle {
+        root * /srv
+        try_files {path} {path}/ /index.html
+        file_server
+    }
 
     header {
         X-Content-Type-Options nosniff

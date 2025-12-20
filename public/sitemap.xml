@@ -1,1 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://www.cblining.com/careers/</loc></url><url><loc>https://www.cblining.com/categories/</loc></url><url><loc>https://www.cblining.com/services/cctv-pipeline-inspection/</loc></url><url><loc>https://www.cblining.com/services/cipp-pipe-lining/</loc></url><url><loc>https://www.cblining.com/services/hydro-jetting/</loc></url><url><loc>https://www.cblining.com/services/manhole-rehabilitation/</loc></url><url><loc>https://www.cblining.com/</loc></url><url><loc>https://www.cblining.com/privacy/</loc></url><url><loc>https://www.cblining.com/services/</loc></url><url><loc>https://www.cblining.com/tags/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/careers/</loc>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/services/cctv-pipeline-inspection/</loc>
+  </url><url>
+    <loc>http://localhost:1313/services/cipp-pipe-lining/</loc>
+  </url><url>
+    <loc>http://localhost:1313/services/hydro-jetting/</loc>
+  </url><url>
+    <loc>http://localhost:1313/services/manhole-rehabilitation/</loc>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+  </url><url>
+    <loc>http://localhost:1313/privacy/</loc>
+  </url><url>
+    <loc>http://localhost:1313/services/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+  </url>
+</urlset>
