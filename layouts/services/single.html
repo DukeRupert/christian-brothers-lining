@@ -11,7 +11,7 @@
 {{ with .Params.image }}
 <section class="service-image">
   <div class="container">
-    <img src="{{ . }}" alt="{{ $.Title }} service - Christian Brothers Lining Co." width="3000" height="2000" loading="lazy">
+    <img src="{{ . }}" alt="{{ with $.Params.image_alt }}{{ . }}{{ else }}{{ $.Title }} service - Christian Brothers Lining Co.{{ end }}" width="3000" height="2000" loading="lazy">
   </div>
 </section>
 {{ end }}

@@ -22,7 +22,7 @@
     <div class="nav-desktop">
       <div class="nav-links">
         <!-- Services Dropdown -->
-        <div class="nav-dropdown" @mouseenter="servicesOpen = true" @mouseleave="servicesOpen = false">
+        <div class="nav-dropdown" @mouseenter="servicesOpen = true" @mouseleave="servicesOpen = false" @keydown.escape="servicesOpen = false">
           <button type="button" @click="servicesOpen = !servicesOpen" class="nav-dropdown-btn" :aria-expanded="servicesOpen" aria-haspopup="true" aria-controls="services-menu">
             Services
             <svg aria-hidden="true" class="dropdown-chevron" :class="{ 'rotate': servicesOpen }" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -38,12 +38,11 @@
                x-transition:leave-end="opacity-0"
                class="mega-menu"
                id="services-menu"
-               role="menu"
                aria-label="Services submenu"
                style="display: none;">
             <div class="mega-menu-inner">
               <div class="mega-menu-grid">
-                <a href="/services/cipp-pipe-lining/" class="mega-menu-item" role="menuitem">
+                <a href="/services/cipp-pipe-lining/" class="mega-menu-item">
                   <div class="mega-menu-icon">
                     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/></svg>
                   </div>
@@ -52,7 +51,7 @@
                     <span class="mega-menu-desc">Trenchless technology for corrosion-resistant pipe rehabilitation</span>
                   </div>
                 </a>
-                <a href="/services/manhole-rehabilitation/" class="mega-menu-item" role="menuitem">
+                <a href="/services/manhole-rehabilitation/" class="mega-menu-item">
                   <div class="mega-menu-icon">
                     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
                   </div>
@@ -61,7 +60,7 @@
                     <span class="mega-menu-desc">Professional restoration to extend infrastructure life</span>
                   </div>
                 </a>
-                <a href="/services/cctv-pipeline-inspection/" class="mega-menu-item" role="menuitem">
+                <a href="/services/cctv-pipeline-inspection/" class="mega-menu-item">
                   <div class="mega-menu-icon">
                     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
                   </div>
@@ -70,7 +69,7 @@
                     <span class="mega-menu-desc">Advanced camera technology for pipe assessment</span>
                   </div>
                 </a>
-                <a href="/services/hydro-jetting/" class="mega-menu-item" role="menuitem">
+                <a href="/services/hydro-jetting/" class="mega-menu-item">
                   <div class="mega-menu-icon">
                     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>
                   </div>
@@ -88,7 +87,7 @@
       </div>
 
       <div class="nav-cta">
-        <a href="tel:{{ .Site.Params.company.phone | replaceRE "[^0-9]" "" }}" class="phone-link">
+        <a href="tel:{{ .Site.Params.company.phone | replaceRE "[^0-9]" "" }}" class="phone-link" aria-label="Call us at {{ .Site.Params.company.phone }}">
           <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           {{ .Site.Params.company.phone }}
         </a>
@@ -112,6 +111,8 @@
   </div>
 
   <div x-show="mobileMenuOpen"
+       x-trap.inert.noscroll="mobileMenuOpen"
+       @keydown.escape.window="mobileMenuOpen = false"
        x-transition:enter="transition ease-out duration-300"
        x-transition:enter-start="translate-x-full"
        x-transition:enter-end="translate-x-0"
@@ -143,10 +144,12 @@
           <svg aria-hidden="true" class="dropdown-chevron" :class="{ 'rotate': open }" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div x-show="open" x-collapse class="mobile-accordion-panel" id="mobile-services">
-          <a href="/services/cipp-pipe-lining/">CIPP Pipe Lining</a>
-          <a href="/services/manhole-rehabilitation/">Manhole Rehabilitation</a>
-          <a href="/services/cctv-pipeline-inspection/">CCTV Inspection</a>
-          <a href="/services/hydro-jetting/">Hydro Jetting</a>
+          <ul>
+            <li><a href="/services/cipp-pipe-lining/">CIPP Pipe Lining</a></li>
+            <li><a href="/services/manhole-rehabilitation/">Manhole Rehabilitation</a></li>
+            <li><a href="/services/cctv-pipeline-inspection/">CCTV Inspection</a></li>
+            <li><a href="/services/hydro-jetting/">Hydro Jetting</a></li>
+          </ul>
         </div>
       </div>
 
@@ -154,7 +157,7 @@
     </nav>
 
     <div class="mobile-menu-footer">
-      <a href="tel:{{ .Site.Params.company.phone | replaceRE "[^0-9]" "" }}" class="mobile-phone-link">
+      <a href="tel:{{ .Site.Params.company.phone | replaceRE "[^0-9]" "" }}" class="mobile-phone-link" aria-label="Call us at {{ .Site.Params.company.phone }}">
         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         {{ .Site.Params.company.phone }}
       </a>

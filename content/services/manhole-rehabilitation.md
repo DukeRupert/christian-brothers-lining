@@ -3,6 +3,7 @@ title: "Manhole Rehabilitation"
 description: "Expert manhole rehabilitation services - Professional restoration that protects and extends the life of your infrastructure."
 intro: "Professional restoration services that protect and extend the life of your infrastructure while minimizing costs and disruption. Often paired with our CIPP pipe lining services for complete system rehabilitation."
 image: "/images/repaired-pipe.webp"
+image_alt: "Restored pipe interior showing completed rehabilitation work"
 
 benefits_title: "Why Choose Us"
 benefits:

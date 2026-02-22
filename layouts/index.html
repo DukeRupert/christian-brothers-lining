@@ -1,10 +1,10 @@
 {{ define "main" }}
 <!-- Hero Section -->
-<section class="hero">
-  <div class="hero-bg" style="background-image: url('/images/repaired-pipe.webp');"></div>
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-bg" style="background-image: url('/images/repaired-pipe.webp');" role="img" aria-label="Interior of a rehabilitated pipe showing smooth CIPP lining"></div>
   <div class="hero-content">
     <div class="container">
-      <h1>{{ .Site.Params.tagline }}</h1>
+      <h1 id="hero-heading">{{ .Site.Params.tagline }}</h1>
       <p class="hero-subtitle">Cost-effective, trenchless, and eco-friendly pipe rehabilitation serving Northern California since {{ .Site.Params.stats.yearFounded }}.</p>
       <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary btn-lg">Request Assessment</a>
     </div>
@@ -12,29 +12,29 @@
 </section>
 
 <!-- Municipalities Section -->
-<section class="municipalities">
+<section class="municipalities" aria-labelledby="municipalities-heading">
   <div class="container">
-    <h2>Trusted by California Municipalities</h2>
-    <div class="municipality-list">
+    <h2 id="municipalities-heading">Trusted by California Municipalities</h2>
+    <ul class="municipality-list">
       {{ range .Params.municipalities }}
-      <span class="municipality">{{ . }}</span>
+      <li class="municipality">{{ . }}</li>
       {{ end }}
-      <span class="municipality highlight">+ Private Sector</span>
-    </div>
+      <li class="municipality highlight">+ Private Sector</li>
+    </ul>
   </div>
 </section>
 
 <!-- Services Overview -->
-<section class="services-overview">
+<section class="services-overview" aria-labelledby="services-heading">
   <div class="container">
-    <h2>Our Services</h2>
+    <h2 id="services-heading">Our Services</h2>
     <div class="services-grid">
       {{ range .Params.services }}
       <div class="service-card">
         <div class="service-icon">{{ .icon | safeHTML }}</div>
         <h3>{{ .title }}</h3>
         <p>{{ .description }}</p>
-        {{ with .link }}<a href="{{ . }}" class="link-arrow">Learn More</a>{{ end }}
+        {{ if .link }}<a href="{{ .link }}" class="link-arrow" aria-label="Learn more about {{ .title }}">Learn More</a>{{ end }}
       </div>
       {{ end }}
     </div>
@@ -42,9 +42,9 @@
 </section>
 
 <!-- Why CB Lining? -->
-<section class="advantages">
+<section class="advantages" aria-labelledby="advantages-heading">
   <div class="container">
-    <h2>Why CB Lining?</h2>
+    <h2 id="advantages-heading">Why CB Lining?</h2>
     <div class="advantage-grid">
       {{ range .Params.advantages }}
       <div class="advantage-card">
@@ -58,8 +58,9 @@
 </section>
 
 <!-- Stats Section -->
-<section class="stats">
+<section class="stats" aria-labelledby="stats-heading">
   <div class="container">
+    <h2 id="stats-heading" class="sr-only">Our Track Record</h2>
     <div class="stats-grid">
       <div class="stat">
         <span class="stat-number">{{ .Site.Params.stats.linearFeet }}</span>
@@ -82,9 +83,9 @@
 </section>
 
 <!-- Certifications Section -->
-<section class="certifications">
+<section class="certifications" aria-labelledby="certifications-heading">
   <div class="container">
-    <h2>Licensed & Certified</h2>
+    <h2 id="certifications-heading">Licensed & Certified</h2>
     <div class="cert-grid">
       <div class="cert-badge">
         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -103,9 +104,9 @@
 </section>
 
 <!-- CTA Section -->
-<section class="cta">
+<section class="cta" aria-labelledby="cta-heading">
   <div class="container">
-    <h2>Ready to Restore Your Infrastructure?</h2>
+    <h2 id="cta-heading">Ready to Restore Your Infrastructure?</h2>
     <p>Contact us for a free assessment of your pipeline rehabilitation needs.</p>
     <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary btn-lg">Request Assessment</a>
   </div>

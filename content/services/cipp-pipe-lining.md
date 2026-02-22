@@ -3,6 +3,7 @@ title: "CIPP Pipe Lining"
 description: "CIPP Pipe Lining Services - Trenchless pipe repair solutions that create a new, corrosion-resistant pipe within your existing infrastructure."
 intro: "Innovative trenchless technology that creates a new, corrosion-resistant pipe within your existing infrastructure. No excavation required."
 image: "/images/bad-pipe.webp"
+image_alt: "Interior view of a corroded pipe showing damage before CIPP rehabilitation"
 
 benefits_title: "Why Choose CIPP"
 benefits:

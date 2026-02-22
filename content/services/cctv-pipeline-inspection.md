@@ -3,6 +3,7 @@ title: "CCTV Pipeline Inspection"
 description: "Professional CCTV pipeline inspection services - Advanced camera technology to assess pipe conditions, identify defects, and plan rehabilitation."
 intro: "Advanced camera inspection technology to assess pipeline conditions, identify defects, and make informed decisions about maintenance and rehabilitation."
 image: "/images/bad-pipe.webp"
+image_alt: "Interior view of a deteriorated pipe captured during CCTV inspection"
 
 benefits_title: "Why Choose CCTV Inspection"
 benefits:

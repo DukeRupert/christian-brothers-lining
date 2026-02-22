@@ -3,6 +3,7 @@ title: "Hydro Jetting"
 description: "Professional hydro jetting services - High-pressure water cleaning to remove debris, roots, grease, and buildup from pipelines."
 intro: "High-pressure water jetting to thoroughly clean pipelines, removing debris, roots, grease, and mineral buildup. Essential preparation for rehabilitation or standalone maintenance."
 image: "/images/repaired-pipe.webp"
+image_alt: "Clean pipe interior after hydro jetting service"
 
 benefits_title: "Why Choose Hydro Jetting"
 benefits:
