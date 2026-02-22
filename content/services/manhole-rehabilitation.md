@@ -21,6 +21,6 @@ process:
     description: "Application of protective coatings and liners tailored to your specific conditions. Our materials resist corrosion, infiltration, and structural degradation."
 
 related:
-  - "/services/cipp-pipe-lining"
-  - "/services/cctv-pipeline-inspection"
+  - "/services/cipp-pipe-lining/"
+  - "/services/cctv-pipeline-inspection/"
 ---

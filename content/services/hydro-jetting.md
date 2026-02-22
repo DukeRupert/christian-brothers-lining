@@ -27,8 +27,8 @@ process:
     description: "Post-cleaning CCTV inspection confirms the pipeline is clear and ready for service or rehabilitation work."
 
 related:
-  - "/services/cipp-pipe-lining"
-  - "/services/cctv-pipeline-inspection"
+  - "/services/cipp-pipe-lining/"
+  - "/services/cctv-pipeline-inspection/"
 ---
 
 ## Common Applications

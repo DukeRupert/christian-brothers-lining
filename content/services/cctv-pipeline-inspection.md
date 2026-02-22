@@ -27,8 +27,8 @@ process:
     description: "You receive detailed reports with video footage, defect locations, severity assessments, and recommended next steps for maintenance or rehabilitation."
 
 related:
-  - "/services/cipp-pipe-lining"
-  - "/services/hydro-jetting"
+  - "/services/cipp-pipe-lining/"
+  - "/services/hydro-jetting/"
 ---
 
 ## When to Schedule an Inspection

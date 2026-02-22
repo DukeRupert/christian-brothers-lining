@@ -29,7 +29,7 @@ process:
     description: "Final CCTV inspection verifies proper installation, ensuring every project meets our rigorous quality standards."
 
 related:
-  - "/services/manhole-rehabilitation"
-  - "/services/cctv-pipeline-inspection"
-  - "/services/hydro-jetting"
+  - "/services/manhole-rehabilitation/"
+  - "/services/cctv-pipeline-inspection/"
+  - "/services/hydro-jetting/"
 ---
