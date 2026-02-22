@@ -58,6 +58,9 @@ title = "Christian Brothers Lining Co."
     url = "/careers/"
     weight = 5
 
+[taxonomies]
+  # disabled — no tag/category pages
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
