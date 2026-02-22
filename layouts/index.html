@@ -5,8 +5,8 @@
   <div class="hero-content">
     <div class="container">
       <h1>{{ .Site.Params.tagline }}</h1>
-      <p class="hero-subtitle">Cost-effective, trenchless, and eco-friendly pipe rehabilitation serving California since {{ .Site.Params.stats.yearFounded }}.</p>
-      <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary btn-lg">Schedule Assessment</a>
+      <p class="hero-subtitle">Cost-effective, trenchless, and eco-friendly pipe rehabilitation serving Northern California since {{ .Site.Params.stats.yearFounded }}.</p>
+      <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary btn-lg">Request Assessment</a>
     </div>
   </div>
 </section>
@@ -41,10 +41,10 @@
   </div>
 </section>
 
-<!-- CIPP Advantage -->
+<!-- Why CB Lining? -->
 <section class="advantages">
   <div class="container">
-    <h2>The CIPP Advantage</h2>
+    <h2>Why CB Lining?</h2>
     <div class="advantage-grid">
       {{ range .Params.advantages }}
       <div class="advantage-card">
@@ -70,8 +70,33 @@
         <span class="stat-label">Successful Projects</span>
       </div>
       <div class="stat">
-        <span class="stat-number">Since {{ .Site.Params.stats.yearFounded }}</span>
+        <span class="stat-number">{{ .Site.Params.stats.yearsExperience }}</span>
         <span class="stat-label">Years of Excellence</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">{{ .Site.Params.stats.municipalities }}</span>
+        <span class="stat-label">Municipalities Served</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section class="certifications">
+  <div class="container">
+    <h2>Licensed & Certified</h2>
+    <div class="cert-grid">
+      <div class="cert-badge">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        {{ .Site.Params.certifications.cslb }}
+      </div>
+      <div class="cert-badge">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        {{ .Site.Params.certifications.cipp }}
+      </div>
+      <div class="cert-badge">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        {{ .Site.Params.certifications.nassco }}
       </div>
     </div>
   </div>
@@ -82,7 +107,7 @@
   <div class="container">
     <h2>Ready to Restore Your Infrastructure?</h2>
     <p>Contact us for a free assessment of your pipeline rehabilitation needs.</p>
-    <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary btn-lg">Get Started</a>
+    <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary btn-lg">Request Assessment</a>
   </div>
 </section>
 {{ end }}

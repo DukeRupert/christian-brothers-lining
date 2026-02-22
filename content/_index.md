@@ -1,6 +1,6 @@
 ---
 title: "Pipeline Rehabilitation Experts"
-description: "Christian Brother's Lining Co. provides cost-effective, trenchless CIPP pipe lining and manhole rehabilitation services to California municipalities and private sector since 2008."
+description: "Christian Brothers Lining Co. provides trenchless CIPP pipe lining and manhole rehabilitation for Northern California municipalities. 250,000+ feet restored. Licensed, bonded & insured."
 
 municipalities:
   - San Jose
@@ -31,16 +31,16 @@ services:
     link: "/services/hydro-jetting/"
 
 advantages:
+  - title: "Certified Experts"
+    description: "NASSCO PACP/ITCP certified crew with CSLB licensing. We meet every compliance standard municipalities require."
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>'
   - title: "Minimize Disruption"
-    description: "No excavation required - preserve landscapes, roads, and structures."
+    description: "No excavation required - preserve landscapes, roads, and structures with trenchless technology."
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>'
   - title: "Cost-Effective"
-    description: "Save significantly compared to traditional pipe replacement methods."
+    description: "Save significantly compared to traditional pipe replacement. Less labor, less equipment, less restoration."
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>'
-  - title: "Eco-Friendly"
-    description: "Sustainable solution that reduces waste and environmental impact."
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m7 12 5 5 5-5"/><path d="M12 17V7"/></svg>'
-  - title: "Less Downtime"
-    description: "Quick installation means faster return to normal operations."
+  - title: "17+ Years Experience"
+    description: "Since 2008, we've restored over 250,000 feet of pipeline across 8+ Northern California municipalities."
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>'
 ---

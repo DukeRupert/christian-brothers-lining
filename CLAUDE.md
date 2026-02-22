@@ -31,7 +31,7 @@ Multi-stage Docker build: `hugomods/hugo:exts` builds the site, then static outp
 
 ## Template Structure
 
-- `layouts/_default/baseof.html` — Base template with SEO meta, structured data (JSON-LD), Google Fonts (Inter + Montserrat), Alpine.js + Collapse plugin, and Plausible analytics
+- `layouts/_default/baseof.html` — Base template with SEO meta, structured data (JSON-LD), Google Fonts (Inter), Alpine.js + Collapse plugin, and Plausible analytics
 - `layouts/index.html` — Homepage (hero, municipalities, services grid, advantages, stats, CTA)
 - `layouts/services/single.html` — Service detail pages (hero, image, benefits grid, process steps, content, related services, CTA)
 - `layouts/_default/careers.html` — Careers page (uses `{{ .Content }}` from markdown)
@@ -64,7 +64,7 @@ The homepage (`content/_index.md`) similarly uses front matter for `municipaliti
 
 ## Styling
 
-Single CSS file at `assets/css/main.css` using CSS custom properties. Hugo fingerprints and minifies it via `resources.Get` in baseof. Uses `Inter` for body text and `Montserrat` for headings.
+Single CSS file at `assets/css/main.css` using CSS custom properties. Hugo fingerprints and minifies it via `resources.Get` in baseof. Uses `Inter` throughout (body + headings). Brand colors: green primary (`#0A7E42`), orange accent (`#F57C00`) for CTA buttons.
 
 ## Client-Side JS
 

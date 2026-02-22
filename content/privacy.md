@@ -1,11 +1,11 @@
 ---
 title: "Privacy Policy"
-description: "Christian Brother's Lining Co. privacy policy - how we handle your data and protect your privacy."
+description: "Christian Brothers Lining Co. privacy policy - how we handle your data and protect your privacy."
 ---
 
 ## Your Privacy Matters
 
-At Christian Brother's Lining Co., we believe in respecting your privacy. This policy explains how we handle data when you visit our website.
+At Christian Brothers Lining Co., we believe in respecting your privacy. This policy explains how we handle data when you visit our website.
 
 ## We Don't Use Cookies
 

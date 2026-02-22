@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ if .IsHome }}{{ .Site.Title }} | Pipeline Rehabilitation Experts{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <title>{{ if .IsHome }}{{ .Site.Title }} | CIPP Pipe Lining | Northern California{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
   <!-- Canonical URL -->
@@ -39,7 +39,7 @@
   <!-- Preload critical assets -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   {{ $styles := resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
@@ -62,12 +62,13 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
     "name": "{{ .Site.Title }}",
     "description": "{{ .Site.Params.description }}",
     "url": "{{ .Site.BaseURL }}",
     "logo": "{{ .Site.BaseURL }}images/logo.png",
     "email": "{{ .Site.Params.email }}",
+    "telephone": "{{ .Site.Params.company.phone }}",
     "foundingDate": "{{ .Site.Params.stats.yearFounded }}",
     "areaServed": {
       "@type": "State",
@@ -77,10 +78,17 @@
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Fairfield",
-      "addressRegion": "CA",
-      "addressCountry": "US"
-    }
+      "streetAddress": "{{ .Site.Params.company.address }}",
+      "addressLocality": "{{ .Site.Params.company.city }}",
+      "addressRegion": "{{ .Site.Params.company.region }}",
+      "postalCode": "{{ .Site.Params.company.zip }}",
+      "addressCountry": "{{ .Site.Params.company.country }}"
+    },
+    "hasCredential": [
+      { "@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "{{ .Site.Params.certifications.cslb }}" },
+      { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "{{ .Site.Params.certifications.cipp }}" },
+      { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "{{ .Site.Params.certifications.nassco }}" }
+    ]
   }
   </script>
   {{ else if eq .Section "services" }}

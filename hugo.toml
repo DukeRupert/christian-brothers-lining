@@ -1,26 +1,36 @@
 baseURL = 'https://www.cblining.com/'
 languageCode = 'en-us'
-title = "Christian Brother's Lining Co."
+title = "Christian Brothers Lining Co."
 
 [params]
-  description = "Cost-effective, trenchless, and eco-friendly pipe rehabilitation serving California since 2008."
+  description = "Trenchless CIPP pipe lining and manhole rehabilitation for Northern California municipalities. 250,000+ feet restored. Licensed, bonded & insured."
   email = "office@cblining.com"
-  tagline = "Pipeline Problems? We've Got the Solution"
+  tagline = "Trenchless Pipeline Rehabilitation. 250,000+ Feet Restored Across Northern California."
   # Cloudflare Turnstile site key for contact form spam protection
   # Use test key for localhost: 1x00000000000000000000AA
   turnstileSiteKey = ""
 
 [params.company]
-  name = "Christian Brother's Lining Co."
+  name = "Christian Brothers Lining Co."
   city = "Fairfield"
   region = "CA"
   country = "US"
   serviceArea = "San Francisco Bay Area, Northern California"
+  phone = "(707) 590-0590"
+  address = "1267 Willis St"
+  zip = "94533"
 
 [params.stats]
   linearFeet = "250,000+"
   projects = "300+"
   yearFounded = "2008"
+  yearsExperience = "17+"
+  municipalities = "8+"
+
+[params.certifications]
+  cslb = "CSLB Licensed (CA)"
+  cipp = "CIPP Certified Installers"
+  nassco = "NASSCO PACP/ITCP"
 
 [params.social]
   # facebook = "https://facebook.com/cblining"

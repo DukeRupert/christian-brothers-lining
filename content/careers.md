@@ -1,12 +1,12 @@
 ---
 title: "Careers"
-description: "Join Christian Brother's Lining Co. - Career opportunities in pipeline rehabilitation including our DoD SkillBridge program for transitioning military members."
+description: "Join Christian Brothers Lining Co. - Career opportunities in pipeline rehabilitation including our DoD SkillBridge program for transitioning military members."
 layout: "careers"
 ---
 
 ## Join Our Team
 
-Experience the growing pipeline rehabilitation industry with a successful team at Christian Brother's Lining Co. We're always looking for motivated individuals to join our crew.
+Experience the growing pipeline rehabilitation industry with a successful team at Christian Brothers Lining Co. We're always looking for motivated individuals to join our crew.
 
 Based in **Fairfield, CA**, we operate throughout the beautiful San Francisco Bay Area in Northern California.
 
