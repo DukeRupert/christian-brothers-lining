@@ -115,6 +115,7 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   text-align: center;
   border-radius: var(--radius);
@@ -133,19 +134,6 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 .btn-primary:hover,
 .btn-primary:focus {
   background: var(--color-accent-hover);
-  color: var(--color-white);
-}
-
-.btn-secondary,
-.btn-secondary:link,
-.btn-secondary:visited {
-  background: var(--color-primary);
-  color: var(--color-white);
-}
-
-.btn-secondary:hover,
-.btn-secondary:focus {
-  background: var(--color-primary-dark);
   color: var(--color-white);
 }
 
@@ -273,9 +261,11 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 .mega-menu {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   padding-top: 0.75rem;
   z-index: 50;
+  max-width: calc(100vw - 2rem);
 }
 
 .mega-menu-inner {
@@ -291,7 +281,7 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
   grid-template-columns: repeat(2, 1fr);
   gap: 0.25rem;
   padding: 0.5rem;
-  min-width: 500px;
+  width: min(500px, calc(100vw - 2rem));
 }
 
 .mega-menu-item {
@@ -503,8 +493,6 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 .opacity-100 { opacity: 1; }
 .translate-x-full { transform: translateX(100%); }
 .translate-x-0 { transform: translateX(0); }
-.-translate-y-1 { transform: translateY(-0.25rem); }
-.translate-y-0 { transform: translateY(0); }
 
 /* Hero */
 .hero {
@@ -660,6 +648,7 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 }
 
 .advantage-card p {
+  opacity: 0.9;
 }
 
 /* Stats */
@@ -768,8 +757,8 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--spacing-lg);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg) var(--spacing-md);
   margin-bottom: var(--spacing-lg);
 }
 
@@ -930,7 +919,7 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 .service-image img {
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
-  max-height: 500px;
+  max-height: clamp(300px, 40vw, 500px);
   width: 100%;
   object-fit: cover;
 }
@@ -1046,7 +1035,7 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
 
 .related-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--spacing-md);
 }
 
@@ -1217,6 +1206,51 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
   color: var(--color-gray);
 }
 
+/* List Pages */
+.list-page {
+  padding: var(--spacing-xl) 0;
+}
+
+.list-intro {
+  max-width: 700px;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-gray);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.list-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.list-item {
+  display: block;
+  background: var(--color-white);
+  padding: var(--spacing-md);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+  color: inherit;
+}
+
+.list-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  color: inherit;
+}
+
+.list-item h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.list-item p {
+  color: var(--color-gray);
+  font-size: 0.9375rem;
+}
+
 /* Screen Reader Only */
 .sr-only {
   position: absolute;
@@ -1240,8 +1274,27 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
   }
 }
 
-/* Responsive */
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .nav-desktop {
+    gap: var(--spacing-md);
+  }
+
+  .nav-links {
+    gap: var(--spacing-sm);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Responsive - Mobile */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+
   .nav-desktop {
     display: none;
   }
@@ -1251,7 +1304,11 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
   }
 
   .hero {
-    min-height: 70vh;
+    min-height: 60vh;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
   }
 
   .process-step {
@@ -1267,4 +1324,12 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
   .sig-divider { justify-content: center; }
   .sig-divider-inner { flex-shrink: 1; }
   .sig-divider-text { white-space: normal; text-align: center; }
+}
+
+/* Responsive - Landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: var(--spacing-lg) 0;
+  }
 }
