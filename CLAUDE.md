@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Hugo static site with optional Go API backend, deployed to VPS via Docker and GitHub Actions. See ARCHITECTURE.md for the complete deployment architecture reference.
+Hugo static site for a California pipe rehabilitation company, served by Caddy, deployed to VPS via Docker and GitHub Actions.
 
 ## Build Commands
 
@@ -23,37 +23,60 @@ docker compose up
 ## Architecture
 
 ```
-Internet → Outer Caddy (HTTPS) → Docker Container (HTTP:8082)
-                                      └── Inner Caddy (:80, static files)
+Internet → Outer Caddy (HTTPS on VPS) → Docker Container (HTTP:8082)
+                                              └── Inner Caddy (:80, static files from /srv)
 ```
 
-**Key directories:**
-- `content/` - Hugo markdown content (homepage + services)
-- `layouts/` - Hugo templates (baseof, partials, service pages)
-- `assets/css/` - Styles (main.css with CSS variables)
-- `static/images/` - Site images
+Multi-stage Docker build: `hugomods/hugo:exts` builds the site, then static output is copied to `caddy:2-alpine`.
 
-**Key config files:**
-- `hugo.toml` - Hugo configuration (site params, menus, stats)
-- `Caddyfile` - Caddy static file server config
-- `Dockerfile` - Multi-stage build (Hugo → Caddy)
-- `docker-compose.yml` - Container orchestration
+## Template Structure
+
+- `layouts/_default/baseof.html` — Base template with SEO meta, structured data (JSON-LD), Google Fonts (Inter + Montserrat), Alpine.js + Collapse plugin, and Plausible analytics
+- `layouts/index.html` — Homepage (hero, municipalities, services grid, advantages, stats, CTA)
+- `layouts/services/single.html` — Service detail pages (hero, image, benefits grid, process steps, content, related services, CTA)
+- `layouts/_default/careers.html` — Careers page (uses `{{ .Content }}` from markdown)
+- `layouts/partials/header.html`, `footer.html` — Shared header/footer
+
+## Service Page Content Pattern
+
+Service pages are data-driven via front matter in `content/services/*.md`. The template renders structured fields — no markdown body needed:
+
+```yaml
+title: "Service Name"
+description: "SEO description"
+intro: "Displayed below the h1"
+image: "/images/photo.webp"
+benefits_title: "Why Choose X"
+benefits:
+  - title: "Benefit"
+    description: "Details"
+process_title: "Our Process"
+process:
+  - title: "Step"
+    description: "Details"
+related:
+  - "/services/other-service"
+```
+
+## Homepage Content Pattern
+
+The homepage (`content/_index.md`) similarly uses front matter for `municipalities`, `services` (with inline SVG icons), and `advantages`. Site-wide stats and company info come from `hugo.toml` params.
+
+## Styling
+
+Single CSS file at `assets/css/main.css` using CSS custom properties. Hugo fingerprints and minifies it via `resources.Get` in baseof. Uses `Inter` for body text and `Montserrat` for headings.
+
+## Client-Side JS
+
+Alpine.js (loaded via CDN in baseof) handles interactive elements like mobile nav and FAQ accordions (via `@alpinejs/collapse` plugin). No build step for JS.
 
 ## Deployment
 
-Automated via GitHub Actions on push to main/master:
-1. Builds Docker image (Hugo static site + optional Go API)
-2. Pushes to Docker Hub
-3. SSH deploys to VPS via `docker compose pull && up -d`
+Automated via GitHub Actions (`.github/workflows/deploy.yml`) on push to `main`:
+1. Builds Docker image with Hugo + Caddy
+2. Pushes to Docker Hub (tagged `latest` + commit SHA)
+3. SSH deploys to VPS at `/opt/christian-brothers-lining` via `docker compose pull && up -d`
 
 **Required GitHub Secrets:** `DOCKERHUB_USERNAME`, `DOCKERHUB_TOKEN`, `VPS_HOST`, `VPS_USER`, `VPS_SSH_KEY`
 
-**VPS .env variables:** `DOCKER_IMAGE`, `LISTEN_PORT`, `POSTMARK_TOKEN`, `FROM_EMAIL`, `TO_EMAIL`, `ALLOWED_ORIGIN`, `TURNSTILE_SECRET`
-
-## Contact Form Pattern
-
-Uses Cloudflare Turnstile for spam protection + Go API for email sending via Postmark.
-
-**Turnstile test keys (localhost):**
-- Site Key: `1x00000000000000000000AA`
-- Secret: `1x0000000000000000000000000000000AA`
+**VPS .env variables:** `DOCKER_IMAGE`, `LISTEN_PORT`
