@@ -1,114 +1,147 @@
 {{ define "main" }}
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="hero" aria-labelledby="hero-heading">
-  <div class="hero-bg" style="background-image: url('/images/repaired-pipe.webp');" role="img" aria-label="Interior of a rehabilitated pipe showing smooth CIPP lining"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-pipe" aria-hidden="true">
+    <svg class="hero-pipe-svg" width="100%" height="100%" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" opacity="0.4">
+      <!-- Crosshairs (static) -->
+      <line x1="0" y1="200" x2="500" y2="200" stroke="rgba(244,242,238,0.1)" stroke-width="1"/>
+      <line x1="250" y1="0" x2="250" y2="400" stroke="rgba(244,242,238,0.1)" stroke-width="1"/>
+      <!-- Outer ring — slow clockwise, 120s -->
+      <g>
+        <ellipse cx="250" cy="200" rx="160" ry="160" stroke="#E8621A" stroke-width="24" fill="none" stroke-dasharray="80 20"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 250 200" to="360 250 200" dur="120s" repeatCount="indefinite"/>
+      </g>
+      <!-- Middle ring — counter-clockwise, 80s -->
+      <g>
+        <ellipse cx="250" cy="200" rx="120" ry="120" stroke="#2ECC40" stroke-width="8" fill="none" stroke-dasharray="16 8"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 250 200" to="-360 250 200" dur="80s" repeatCount="indefinite"/>
+      </g>
+      <!-- Inner ring — clockwise, 60s -->
+      <g>
+        <ellipse cx="250" cy="200" rx="80" ry="80" stroke="#E8621A" stroke-width="4" fill="none" opacity="0.5" stroke-dasharray="12 6"/>
+        <animateTransform attributeName="transform" type="rotate" from="0 250 200" to="360 250 200" dur="60s" repeatCount="indefinite"/>
+      </g>
+      <!-- Label (static) -->
+      <text x="250" y="208" text-anchor="middle" font-family="'Barlow Condensed', sans-serif" font-size="13" fill="rgba(244,242,238,0.25)" letter-spacing="4">CIPP LINER</text>
+    </svg>
+  </div>
   <div class="hero-content">
-    <div class="container">
-      <h1 id="hero-heading">{{ .Site.Params.tagline }}</h1>
-      <p class="hero-subtitle">Cost-effective, trenchless, and eco-friendly pipe rehabilitation serving Northern California since {{ .Site.Params.stats.yearFounded }}.</p>
-      <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary btn-lg">Request Assessment</a>
+    <div class="eyebrow eyebrow-green">Northern California — Est. {{ .Site.Params.stats.yearFounded }}</div>
+    <h1 id="hero-heading">Infrastructure<br>Restored.<br><span class="accent">No Trench.<br>No Disruption.</span></h1>
+    <p class="hero-sub">CIPP pipe lining, manhole rehabilitation, and pipeline inspection for municipalities across the San Francisco Bay Area and Northern California. In service since {{ .Site.Params.stats.yearFounded }}.</p>
+    <a href="tel:{{ .Site.Params.company.phone | replaceRE "[^0-9]" "" }}" class="btn btn-primary">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 1h3l1.5 4-2 1.5a9 9 0 004 4L11 8.5l4 1.5v3a1 1 0 01-1 1C6.4 14 2 9.6 2 2a1 1 0 011-1z" fill="white"/></svg>
+      Call {{ .Site.Params.company.phone }}
+    </a>
+  </div>
+</section>
+
+<script>
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.hero-pipe-svg animateTransform').forEach(function(el) { el.remove(); });
+  }
+</script>
+
+<!-- Stats Bar -->
+<section class="stats" aria-labelledby="stats-heading">
+  <h2 id="stats-heading" class="sr-only">Our Track Record</h2>
+  <div class="stats-grid">
+    <div class="stat">
+      <span class="stat-number">{{ .Site.Params.stats.linearFeet }}</span>
+      <span class="stat-label">Linear Feet Restored</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">{{ .Site.Params.stats.projects }}</span>
+      <span class="stat-label">Completed Projects</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">{{ .Site.Params.stats.yearsExperience }}</span>
+      <span class="stat-label">Years in Service</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">{{ .Site.Params.stats.municipalities }}</span>
+      <span class="stat-label">Municipalities Served</span>
     </div>
   </div>
 </section>
 
-<!-- Municipalities Section -->
-<section class="municipalities" aria-labelledby="municipalities-heading">
-  <div class="container">
-    <h2 id="municipalities-heading">Trusted by California Municipalities</h2>
-    <ul class="municipality-list">
-      {{ range .Params.municipalities }}
-      <li class="municipality">{{ . }}</li>
-      {{ end }}
-      <li class="municipality highlight">+ Private Sector</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Services Overview -->
-<section class="services-overview" aria-labelledby="services-heading">
-  <div class="container">
-    <h2 id="services-heading">Our Services</h2>
+<!-- Services -->
+<section id="services" class="section section-light" aria-labelledby="services-heading">
+  <div class="section-inner">
+    <div class="eyebrow">What We Do</div>
+    <h2 id="services-heading">Trenchless Solutions.<br>Municipal-Grade Work.</h2>
+    <p class="section-sub">From a single corroded lateral to a full-city pipeline rehabilitation program — we have the certification, equipment, and field experience to deliver on scope and schedule.</p>
     <div class="services-grid">
       {{ range .Params.services }}
       <div class="service-card">
         <div class="service-icon">{{ .icon | safeHTML }}</div>
         <h3>{{ .title }}</h3>
         <p>{{ .description }}</p>
-        {{ if .link }}<a href="{{ .link }}" class="link-arrow" aria-label="Learn more about {{ .title }}">Learn More</a>{{ end }}
+        {{ if .link }}<a href="{{ .link }}" class="link-arrow" aria-label="Learn more about {{ .title }}">Learn more &rarr;</a>{{ end }}
       </div>
       {{ end }}
     </div>
   </div>
 </section>
 
-<!-- Why CB Lining? -->
-<section class="advantages" aria-labelledby="advantages-heading">
-  <div class="container">
-    <h2 id="advantages-heading">Why CB Lining?</h2>
-    <div class="advantage-grid">
-      {{ range .Params.advantages }}
-      <div class="advantage-card">
-        <div class="advantage-icon">{{ .icon | safeHTML }}</div>
-        <h3>{{ .title }}</h3>
-        <p>{{ .description }}</p>
+<!-- Why CB Lining -->
+<section id="about" class="section section-mid" aria-labelledby="pillars-heading">
+  <div class="section-inner">
+    <div class="eyebrow">Why CB Lining</div>
+    <h2 id="pillars-heading">The Standard<br>Municipal Work Demands.</h2>
+    <div class="pillars-grid">
+      {{ range $i, $p := .Params.pillars }}
+      <div class="pillar">
+        <div class="pillar-num">{{ printf "%02d" (add $i 1) }}</div>
+        <div class="pillar-title">{{ $p.title }}</div>
+        <p class="pillar-desc">{{ $p.description }}</p>
       </div>
       {{ end }}
     </div>
   </div>
 </section>
 
-<!-- Stats Section -->
-<section class="stats" aria-labelledby="stats-heading">
-  <div class="container">
-    <h2 id="stats-heading" class="sr-only">Our Track Record</h2>
-    <div class="stats-grid">
-      <div class="stat">
-        <span class="stat-number">{{ .Site.Params.stats.linearFeet }}</span>
-        <span class="stat-label">Linear Feet Restored</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">{{ .Site.Params.stats.projects }}</span>
-        <span class="stat-label">Successful Projects</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">{{ .Site.Params.stats.yearsExperience }}</span>
-        <span class="stat-label">Years of Excellence</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">{{ .Site.Params.stats.municipalities }}</span>
-        <span class="stat-label">Municipalities Served</span>
-      </div>
+<!-- Municipal Clients -->
+<section class="munis-band" aria-labelledby="munis-heading">
+  <div class="munis-band-inner">
+    <h2 id="munis-heading" class="sr-only">Municipal Clients</h2>
+    <span class="munis-label">Trusted by</span>
+    <div class="munis">
+      {{ range .Params.municipalities }}
+      <div class="muni-tag">{{ . }}</div>
+      {{ end }}
+      <div class="muni-tag muni-tag-private">+ Private Sector</div>
     </div>
   </div>
 </section>
 
-<!-- Certifications Section -->
-<section class="certifications" aria-labelledby="certifications-heading">
-  <div class="container">
-    <h2 id="certifications-heading">Licensed & Certified</h2>
-    <div class="cert-grid">
-      <div class="cert-badge">
-        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        {{ .Site.Params.certifications.cslb }}
+<!-- Certifications -->
+<section id="certifications" class="section section-dark" aria-labelledby="certs-heading">
+  <div class="section-inner">
+    <div class="eyebrow eyebrow-green">Licensing &amp; Certification</div>
+    <h2 id="certs-heading">Every Credential.<br>Fully Documented.</h2>
+    <p class="section-sub">Procurement officers: our certifications are current, verifiable, and available upon request with any bid submission.</p>
+    <div class="certs-grid">
+      {{ range .Params.certifications }}
+      <div class="cert-card{{ if .alt }} cert-card-alt{{ end }}">
+        <div class="cert-badge">
+          {{ .icon | safeHTML }}
+        </div>
+        <div class="cert-name">{{ .name }}</div>
+        <div class="cert-issuer">{{ .issuer }}</div>
       </div>
-      <div class="cert-badge">
-        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-        {{ .Site.Params.certifications.cipp }}
-      </div>
-      <div class="cert-badge">
-        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        {{ .Site.Params.certifications.nassco }}
-      </div>
+      {{ end }}
     </div>
   </div>
 </section>
 
-<!-- CTA Section -->
-<section class="cta" aria-labelledby="cta-heading">
-  <div class="container">
-    <h2 id="cta-heading">Ready to Restore Your Infrastructure?</h2>
-    <p>Contact us for a free assessment of your pipeline rehabilitation needs.</p>
-    <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary btn-lg">Request Assessment</a>
+<!-- CTA Strip -->
+<section class="cta-strip" aria-labelledby="cta-heading">
+  <div>
+    <h2 id="cta-heading">Ready to Talk Scope?</h2>
+    <p>We respond to assessment requests within one business day.</p>
+    <a href="tel:{{ .Site.Params.company.phone | replaceRE "[^0-9]" "" }}" class="cta-phone" aria-label="Call us at {{ .Site.Params.company.phone }}">{{ .Site.Params.company.phone }}</a>
   </div>
 </section>
 {{ end }}

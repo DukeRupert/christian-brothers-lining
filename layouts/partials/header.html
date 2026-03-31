@@ -3,7 +3,16 @@
     <!-- Logo -->
     <div class="nav-brand">
       <a href="/" class="logo">
-        <img src="/images/logo.webp" alt="{{ .Site.Title }}" width="200" height="77">
+        <div class="logo-mark">
+          <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 11C4 7.13 7.13 4 11 4s7 3.13 7 7-3.13 7-7 7-7-3.13-7-7z" stroke="#0D1117" stroke-width="2"/>
+            <path d="M11 7v4l3 3" stroke="#0D1117" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="logo-text">Christian Brothers Lining</div>
+          <div class="logo-sub">Pipeline Rehabilitation</div>
+        </div>
       </a>
     </div>
 
@@ -44,38 +53,38 @@
               <div class="mega-menu-grid">
                 <a href="/services/cipp-pipe-lining/" class="mega-menu-item">
                   <div class="mega-menu-icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/></svg>
+                    <svg aria-hidden="true" width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><circle cx="11" cy="11" r="4" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 2"/></svg>
                   </div>
                   <div class="mega-menu-content">
                     <span class="mega-menu-title">CIPP Pipe Lining</span>
-                    <span class="mega-menu-desc">Trenchless technology for corrosion-resistant pipe rehabilitation</span>
+                    <span class="mega-menu-desc">Trenchless pipe-within-a-pipe rehabilitation</span>
                   </div>
                 </a>
                 <a href="/services/manhole-rehabilitation/" class="mega-menu-item">
                   <div class="mega-menu-icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                    <svg aria-hidden="true" width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="4" y="8" width="14" height="10" rx="1" stroke="currentColor" stroke-width="2"/><path d="M7 8V6a4 4 0 018 0v2" stroke="currentColor" stroke-width="2"/></svg>
                   </div>
                   <div class="mega-menu-content">
                     <span class="mega-menu-title">Manhole Rehabilitation</span>
-                    <span class="mega-menu-desc">Professional restoration to extend infrastructure life</span>
+                    <span class="mega-menu-desc">Structural restoration of deteriorated access structures</span>
                   </div>
                 </a>
                 <a href="/services/cctv-pipeline-inspection/" class="mega-menu-item">
                   <div class="mega-menu-icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+                    <svg aria-hidden="true" width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="3" stroke="currentColor" stroke-width="2"/><path d="M11 2v3M11 17v3M2 11h3M17 11h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                   </div>
                   <div class="mega-menu-content">
                     <span class="mega-menu-title">CCTV Inspection</span>
-                    <span class="mega-menu-desc">Advanced camera technology for pipe assessment</span>
+                    <span class="mega-menu-desc">NASSCO PACP-compliant condition assessment</span>
                   </div>
                 </a>
                 <a href="/services/hydro-jetting/" class="mega-menu-item">
                   <div class="mega-menu-icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>
+                    <svg aria-hidden="true" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M6 16c0-5 10-5 10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M3 19c0-7 16-7 16-16" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.4"/></svg>
                   </div>
                   <div class="mega-menu-content">
                     <span class="mega-menu-title">Hydro Jetting</span>
-                    <span class="mega-menu-desc">High-pressure cleaning for debris and root removal</span>
+                    <span class="mega-menu-desc">High-pressure cleaning and root removal</span>
                   </div>
                 </a>
               </div>
@@ -88,10 +97,8 @@
 
       <div class="nav-cta">
         <a href="tel:{{ .Site.Params.company.phone | replaceRE "[^0-9]" "" }}" class="phone-link" aria-label="Call us at {{ .Site.Params.company.phone }}">
-          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           {{ .Site.Params.company.phone }}
         </a>
-        <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary">Request Assessment</a>
       </div>
     </div>
   </nav>
@@ -126,7 +133,13 @@
        style="display: none;">
     <div class="mobile-menu-header">
       <a href="/" class="logo">
-        <img src="/images/logo.webp" alt="{{ .Site.Title }}" width="160" height="62">
+        <div class="logo-mark" style="width:28px;height:28px;">
+          <svg viewBox="0 0 22 22" fill="none" width="16" height="16" aria-hidden="true"><path d="M4 11C4 7.13 7.13 4 11 4s7 3.13 7 7-3.13 7-7 7-7-3.13-7-7z" stroke="#0D1117" stroke-width="2"/><path d="M11 7v4l3 3" stroke="#0D1117" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <div class="logo-text" style="font-size:13px;">Christian Brothers Lining</div>
+          <div class="logo-sub">Pipeline Rehabilitation</div>
+        </div>
       </a>
       <button type="button" @click="mobileMenuOpen = false" class="mobile-menu-close" aria-label="Close menu">
         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -161,7 +174,6 @@
         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         {{ .Site.Params.company.phone }}
       </a>
-      <a href="mailto:{{ .Site.Params.email }}" class="btn btn-primary btn-block">Request Assessment</a>
     </div>
   </div>
 </header>

@@ -1,63 +1,55 @@
 <footer class="footer">
-  <div class="footer-bg" style="background-image: url('/images/footer-background.webp');" aria-hidden="true"></div>
-  <div class="footer-content">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="/images/logo.webp" alt="{{ .Site.Title }}" width="200" height="77">
-          <p>Licensed, Bonded & Insured<br>{{ .Site.Params.stats.yearsExperience }} Years of Excellence</p>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 22 22" fill="none" width="22" height="22" aria-hidden="true"><path d="M4 11C4 7.13 7.13 4 11 4s7 3.13 7 7-3.13 7-7 7-7-3.13-7-7z" stroke="#0D1117" stroke-width="2"/><path d="M11 7v4l3 3" stroke="#0D1117" stroke-width="2" stroke-linecap="round"/></svg>
         </div>
-        <nav class="footer-nav" aria-label="Services">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="/services/cipp-pipe-lining/">CIPP Pipe Lining</a></li>
-            <li><a href="/services/manhole-rehabilitation/">Manhole Rehabilitation</a></li>
-            <li><a href="/services/cctv-pipeline-inspection/">CCTV Inspection</a></li>
-            <li><a href="/services/hydro-jetting/">Hydro Jetting</a></li>
-          </ul>
-        </nav>
-        <nav class="footer-nav" aria-label="Company">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="/careers/">Careers</a></li>
-            <li><a href="/privacy/">Privacy Policy</a></li>
-          </ul>
-        </nav>
-        <div class="footer-nav">
-          <h4>Certifications</h4>
-          <ul class="footer-certs">
-            <li>{{ .Site.Params.certifications.cslb }}</li>
-            <li>{{ .Site.Params.certifications.cipp }}</li>
-            <li>{{ .Site.Params.certifications.nassco }}</li>
-          </ul>
+        <div>
+          <div class="logo-text">{{ .Site.Params.company.name }}</div>
+          <div class="logo-sub">Licensed, Bonded &amp; Insured</div>
         </div>
-        <div class="footer-contact">
-          <h4>Contact</h4>
-          <p><a href="tel:{{ .Site.Params.company.phone | replaceRE "[^0-9]" "" }}" class="phone-footer" aria-label="Call us at {{ .Site.Params.company.phone }}">
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            {{ .Site.Params.company.phone }}
-          </a></p>
-          <p><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></p>
-          <p class="location">{{ .Site.Params.company.address }}<br>{{ .Site.Params.company.city }}, {{ .Site.Params.company.region }} {{ .Site.Params.company.zip }}</p>
-          <p class="serving">Serving {{ .Site.Params.company.serviceArea }} since {{ .Site.Params.stats.yearFounded }}</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
-      </div>
-      <!-- Firefly Software signature -->
-      <div class="footer-signature">
-        <span class="sig-divider dark">
-          <span class="sig-divider-rule"></span>
-          <span class="sig-divider-inner">
-            <span class="sig-divider-glyph">✦</span>
-            <span class="sig-divider-text">
-              Made in Montana by <a href="https://fireflysoftware.dev">Firefly Software</a>
-            </span>
-          </span>
-          <span class="sig-divider-rule"></span>
-        </span>
-      </div>
+      </a>
+      <p>Trenchless pipeline rehabilitation serving Northern California municipalities since {{ .Site.Params.stats.yearFounded }}.<br><br>{{ .Site.Params.company.address }}<br>{{ .Site.Params.company.city }}, {{ .Site.Params.company.region }} {{ .Site.Params.company.zip }}</p>
     </div>
+    <nav class="footer-col" aria-label="Services">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/services/cipp-pipe-lining/">CIPP Pipe Lining</a></li>
+        <li><a href="/services/manhole-rehabilitation/">Manhole Rehabilitation</a></li>
+        <li><a href="/services/cctv-pipeline-inspection/">CCTV Inspection</a></li>
+        <li><a href="/services/hydro-jetting/">Hydro Jetting</a></li>
+      </ul>
+    </nav>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/careers/">Careers</a></li>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+      </ul>
+      <br>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:{{ .Site.Params.company.phone | replaceRE "[^0-9]" "" }}" class="footer-phone">{{ .Site.Params.company.phone }}</a></li>
+        <li><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; {{ now.Year }} {{ .Site.Params.company.name }}. All rights reserved. CSLB Licensed.</span>
+    <a href="/privacy/">Privacy Policy</a>
+  </div>
+  <!-- Firefly Software signature -->
+  <div class="footer-signature">
+    <span class="sig-divider dark">
+      <span class="sig-divider-rule"></span>
+      <span class="sig-divider-inner">
+        <span class="sig-divider-glyph">&#10022;</span>
+        <span class="sig-divider-text">
+          Made in Montana by <a href="https://fireflysoftware.dev">Firefly Software</a>
+        </span>
+      </span>
+      <span class="sig-divider-rule"></span>
+    </span>
   </div>
 </footer>
