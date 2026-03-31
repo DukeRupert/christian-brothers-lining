@@ -1,43 +1,32 @@
 ---
 title: "CCTV Pipeline Inspection"
-description: "Professional CCTV pipeline inspection services - Advanced camera technology to assess pipe conditions, identify defects, and plan rehabilitation."
-intro: "Advanced camera inspection technology to assess pipeline conditions, identify defects, and make informed decisions about maintenance and rehabilitation."
+description: "NASSCO PACP-certified CCTV pipeline inspection services in Northern California — condition assessment, defect coding, and rehabilitation planning for municipal pipeline systems."
+headline: "Know Exactly<br>What You Have.<br><span class='accent'>Before You Spend.</span>"
+intro: "Pipeline inspection is the foundation of every sound rehabilitation program. Without accurate condition data, you're guessing at scope — and guessing at cost. Our CCTV inspection service gives you NASSCO PACP-coded condition reports you can use for capital planning, bid documentation, and asset management."
 image: "/images/bad-pipe.webp"
 image_alt: "Interior view of a deteriorated pipe captured during CCTV inspection"
 
-benefits_title: "Why Choose CCTV Inspection"
-benefits:
-  - title: "Accurate Assessment"
-    description: "High-definition cameras provide clear, detailed footage of pipe interiors, identifying cracks, root intrusion, corrosion, and blockages."
-  - title: "Cost-Effective Diagnostics"
-    description: "Pinpoint problems without excavation. Know exactly what you're dealing with before committing to repairs."
-  - title: "Documented Results"
-    description: "Receive comprehensive video documentation and reports for your records, planning, and compliance requirements."
-  - title: "Informed Decisions"
-    description: "Accurate condition data helps prioritize repairs, plan budgets, and choose the right rehabilitation method."
+sections:
+  - eyebrow: "NASSCO PACP Certification"
+    heading: "Industry Standard<br>Condition Coding"
+    paragraphs:
+      - "NASSCO's Pipeline Assessment & Certification Program (PACP) is the North American standard for pipeline condition assessment. PACP-coded inspection reports use a consistent defect taxonomy and scoring methodology that lets you compare condition data across different systems, contractors, and years."
+      - "Our inspection crews are NASSCO PACP certified. Every inspection we deliver includes a full defect-coded video review, written condition summary, and PACP score for each pipe segment inspected. Reports are formatted for direct import into most asset management platforms."
+  - eyebrow: "Deliverables"
+    heading: "What You Receive"
+    paragraphs:
+      - "Every inspection includes a complete documentation package:"
+    items:
+      - "Full HD video footage of each inspected segment"
+      - "NASSCO PACP-coded defect log with distance references"
+      - "Written condition summary per segment"
+      - "Rehabilitation recommendations keyed to defect type and severity"
+      - "Digital deliverable package formatted for asset management import"
 
-process_title: "Our Inspection Process"
-process:
-  - title: "Access & Setup"
-    description: "We access the pipeline through existing manholes or cleanouts. Our equipment is designed for pipes ranging from 4 inches to 60+ inches in diameter."
-  - title: "Camera Deployment"
-    description: "High-resolution, waterproof cameras navigate through the pipeline, capturing continuous video footage of the entire pipe interior."
-  - title: "Real-Time Analysis"
-    description: "Our certified technicians monitor the feed in real-time, noting defects, measuring distances, and documenting conditions as the inspection progresses."
-  - title: "Reporting & Recommendations"
-    description: "You receive detailed reports with video footage, defect locations, severity assessments, and recommended next steps for maintenance or rehabilitation."
+cta_heading: "Need a Condition Assessment Before Your Next Budget Cycle?"
+cta_text: "We can mobilize quickly on standalone inspection contracts. Call to discuss scope and scheduling."
 
 related:
   - "/services/cipp-pipe-lining/"
   - "/services/hydro-jetting/"
 ---
-
-## When to Schedule an Inspection
-
-CCTV pipeline inspection is valuable for:
-
-- **Pre-purchase assessments** - Know the condition of underground infrastructure before acquiring property
-- **Routine maintenance** - Regular inspections catch problems early, before they become emergencies
-- **Post-rehabilitation verification** - Confirm the quality of completed CIPP lining or other repairs
-- **Compliance documentation** - Meet municipal reporting requirements with professional inspection records
-- **Problem diagnosis** - Identify the source of backups, odors, or infiltration issues

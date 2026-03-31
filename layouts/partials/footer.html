@@ -2,13 +2,7 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <a href="/" class="logo">
-        <div class="logo-mark">
-          <svg viewBox="0 0 22 22" fill="none" width="22" height="22" aria-hidden="true"><path d="M4 11C4 7.13 7.13 4 11 4s7 3.13 7 7-3.13 7-7 7-7-3.13-7-7z" stroke="#0D1117" stroke-width="2"/><path d="M11 7v4l3 3" stroke="#0D1117" stroke-width="2" stroke-linecap="round"/></svg>
-        </div>
-        <div>
-          <div class="logo-text">{{ .Site.Params.company.name }}</div>
-          <div class="logo-sub">Licensed, Bonded &amp; Insured</div>
-        </div>
+        <img src="/images/logo.webp" alt="{{ .Site.Title }}" class="logo-img" width="200" height="77">
       </a>
       <p>Trenchless pipeline rehabilitation serving Northern California municipalities since {{ .Site.Params.stats.yearFounded }}.<br><br>{{ .Site.Params.company.address }}<br>{{ .Site.Params.company.city }}, {{ .Site.Params.company.region }} {{ .Site.Params.company.zip }}</p>
     </div>

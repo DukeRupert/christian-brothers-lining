@@ -1,43 +1,26 @@
 ---
 title: "Hydro Jetting"
-description: "Professional hydro jetting services - High-pressure water cleaning to remove debris, roots, grease, and buildup from pipelines."
-intro: "High-pressure water jetting to thoroughly clean pipelines, removing debris, roots, grease, and mineral buildup. Essential preparation for rehabilitation or standalone maintenance."
+description: "Hydro jetting services in Northern California — high-pressure pipeline cleaning for root removal, grease, scale, and debris. Standalone maintenance or CIPP pre-installation preparation."
+headline: "Clean Pipe.<br><span class='accent'>The Right Way.</span>"
+intro: "High-pressure water jetting removes root intrusion, grease accumulation, mineral scale, and debris from pipeline interiors. It's a required step before CIPP installation — and a standalone maintenance service for systems not yet ready for full rehabilitation."
 image: "/images/repaired-pipe.webp"
 image_alt: "Clean pipe interior after hydro jetting service"
 
-benefits_title: "Why Choose Hydro Jetting"
-benefits:
-  - title: "Thorough Cleaning"
-    description: "Water pressure up to 4,000 PSI removes stubborn blockages, tree roots, grease buildup, and scale that traditional methods can't touch."
-  - title: "Pipe-Safe Technology"
-    description: "Unlike mechanical cleaning, hydro jetting won't damage pipe walls. Safe for most pipe materials including clay, concrete, PVC, and cast iron."
-  - title: "Environmentally Friendly"
-    description: "Uses only water - no harsh chemicals. Debris is flushed downstream to be captured, not left to cause future problems."
-  - title: "Preventive Maintenance"
-    description: "Regular hydro jetting extends pipe life and prevents costly emergency backups. Ideal for scheduled maintenance programs."
+sections:
+  - eyebrow: "Common Obstructions"
+    heading: "What Hydro Jetting Clears"
+    paragraphs:
+      - "Root intrusion is the most common cause of partial blockage in older municipal systems. We use root-cutting nozzle configurations to clear root masses before jetting the cleared material downstream for vacuum extraction. Grease accumulation and mineral scale are addressed with high-pressure chain flails and descaling nozzles where necessary."
+      - "Every hydro jetting mobilization includes a post-cleaning CCTV pass to confirm pipe wall condition and verify that the pipe is clean and suitable for the next phase of work."
+  - eyebrow: "When to Call Us"
+    heading: "Maintenance Cleaning &<br>Rehab Prep"
+    paragraphs:
+      - "Hydro jetting is available as a standalone preventive maintenance service for systems on a regular cleaning cycle, and as a required preparation step before any CIPP liner installation. We coordinate cleaning and inspection as a single mobilization where project scope allows — reducing total cost and construction time."
 
-process_title: "Our Hydro Jetting Process"
-process:
-  - title: "Initial Assessment"
-    description: "We begin with a CCTV inspection to identify blockage locations, pipe condition, and any areas requiring special attention."
-  - title: "Equipment Setup"
-    description: "Our truck-mounted hydro jetting units deliver consistent high-pressure water through specialized nozzles designed for your pipe size and conditions."
-  - title: "Precision Cleaning"
-    description: "Trained technicians guide the jetting head through the pipeline, adjusting pressure and nozzle selection to effectively remove all debris."
-  - title: "Verification"
-    description: "Post-cleaning CCTV inspection confirms the pipeline is clear and ready for service or rehabilitation work."
+cta_heading: "Blocked or Restricted Pipelines?"
+cta_text: "We can mobilize for emergency cleaning or schedule as part of a planned maintenance program. Call to discuss."
 
 related:
   - "/services/cipp-pipe-lining/"
   - "/services/cctv-pipeline-inspection/"
 ---
-
-## Common Applications
-
-Hydro jetting effectively addresses:
-
-- **Root intrusion** - Cuts through tree roots that have penetrated pipe joints
-- **Grease buildup** - Removes accumulated fats, oils, and grease from commercial kitchen lines
-- **Scale and mineral deposits** - Clears calcium, rust, and mineral buildup from older pipes
-- **Sediment and debris** - Flushes sand, dirt, and construction debris from storm drains
-- **Pre-lining preparation** - Essential first step before CIPP installation to ensure proper liner adhesion
